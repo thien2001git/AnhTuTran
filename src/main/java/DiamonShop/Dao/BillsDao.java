@@ -1,9 +1,16 @@
 package DiamonShop.Dao;
 
+import DiamonShop.Entity.Users;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import DiamonShop.Entity.BillDetail;
 import DiamonShop.Entity.Bills;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 @Repository
 public class BillsDao extends BaseDao{
 	public int AddBills(Bills bill) {
@@ -51,6 +58,23 @@ public class BillsDao extends BaseDao{
 		sql.append(")");
 		int insert = _jdbcTemplate.update(sql.toString());
 		return insert;
-	};
-	
+	}
+
+    public List<Bills> GetAllBill(Users users1) {
+        return  _jdbcTemplate.query( "SELECT * FROM `bills` WHERE `user` = " + String.format("'%s'", users1.getUser()), new RowMapper<Bills>() {
+            @Override
+            public Bills mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Bills b = new Bills();
+                b.setId(rs.getLong("id"));
+                b.setUser(rs.getString("user"));
+                b.setPhone(rs.getString("phone"));
+                b.setDisplay_name(rs.getString("display_name"));
+                b.setAddress(rs.getString("address"));
+                b.setTotal(rs.getLong("total"));
+                b.setQuanty(rs.getInt("quanty"));
+                b.setNote(rs.getString("note"));
+                return b;
+            }
+        });
+    }
 }

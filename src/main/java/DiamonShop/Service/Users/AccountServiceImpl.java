@@ -9,24 +9,30 @@ import DiamonShop.Entity.Users;
 
 @Service
 public class AccountServiceImpl implements IAccountService {
-	@Autowired
-	UsersDao usersDao = new UsersDao();
+    @Autowired
+    UsersDao usersDao = new UsersDao();
 
-	public int AddAccount(Users users) {
-		users.setPassword(BCrypt.hashpw(users.getPassword(), BCrypt.gensalt(12)));
-		return usersDao.AddAccount(users);
-	}
+    public int AddAccount(Users users) {
+        users.setPassword(BCrypt.hashpw(users.getPassword(), BCrypt.gensalt(12)));
+        return usersDao.AddAccount(users);
+    }
 
-	public Users CheckAccount(Users users) {
-		String pass = users.getPassword();
-		users = usersDao.GetUserByAcc(users);
-		if (users != null) {
-			if (BCrypt.checkpw(pass, users.getPassword())) {
-				return users;
-			} else {
-				return null;
-			}
-		}
-		return null;
-	}
+    public Users CheckAccount(Users users) {
+        String pass = users.getPassword();
+        users = usersDao.GetUserByAcc(users);
+        if (users != null) {
+            if (BCrypt.checkpw(pass, users.getPassword())) {
+                return users;
+            } else {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public int DeleteAccount(Users users) {
+        int x = usersDao.DeleteUserByAcc(users);
+        System.out.printf("AccountServiceImpl.DeleteAccount email %s res %d", users.getUser(), x);
+        return x;
+    }
 }

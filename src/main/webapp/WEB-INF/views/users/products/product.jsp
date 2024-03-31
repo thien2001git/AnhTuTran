@@ -371,19 +371,19 @@ body {
 				<div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
 					<h2 class="name">${ product.name }</h2>
 					<hr />
-					<h3 class="price-container">${ product.price }$</h3>
+					<h3 class="price-container">${ product.price }đ</h3>
 					<hr />
-					<div class="control-group">
-						<label class="control-label"><span>Color</span></label>
-						<div class="controls">
-							<select class="span11">
-								<option>Red</option>
-								<option>Purple</option>
-								<option>Pink</option>
-								<option>Red</option>
-							</select>
-						</div>
-					</div>
+<%--					<div class="control-group">--%>
+<%--						<label class="control-label"><span>Color</span></label>--%>
+<%--						<div class="controls">--%>
+<%--							<select class="span11">--%>
+<%--								<option>Red</option>--%>
+<%--								<option>Purple</option>--%>
+<%--								<option>Pink</option>--%>
+<%--								<option>Red</option>--%>
+<%--							</select>--%>
+<%--						</div>--%>
+<%--					</div>--%>
 					<hr />
 					<div class="description description-tabs">
 						<ul id="myTab" class="nav nav-pills">

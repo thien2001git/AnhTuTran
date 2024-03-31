@@ -18,7 +18,7 @@
 <meta name="author" content="" />
 <link rel="shortcut icon"
 	href="<c:url value="/assets/user/images/favicon.png"/>" type="">
-<title>Famms - Fashion</title>
+<title>Trần Anh Tú - Laptop</title>
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css"
 	href="<c:url value ="/assets/user/css/bootstrap.css"/>" />

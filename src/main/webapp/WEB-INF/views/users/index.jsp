@@ -19,12 +19,11 @@
 								<div class="col-md-7 col-lg-6 ">
 									<div class="detail-box">
 										<h1>
-											<span> Sale 20% Off </span> <br> On Everything
+											<span> Siêu giảm giá </span> <br> Tới 1.000.000
 										</h1>
-										<p>Clothing Sale 20% - 30% OFF. 4Days ONLY March 25th -
-											30th!</p>
+										<p>Laptop trả góp 0%.</p>
 										<div class="btn-box">
-											<a href="" class="btn1"> Shop Now </a>
+											<a href="" class="btn1"> Mua ngay </a>
 										</div>
 									</div>
 								</div>
@@ -37,11 +36,11 @@
 								<div class="col-md-7 col-lg-6 ">
 									<div class="detail-box">
 										<h1>
-											<span> Sale Up to 70% </span> <br> T-Shirt
+											<span> Giảm giảm giá 20% </span> <br> Chuột
 										</h1>
-										<p>Clothing Sale 70% OFF. 1day ONLY March 27th!</p>
+										<p>Mua ngay vào ngày 1/4</p>
 										<div class="btn-box">
-											<a href="" class="btn1"> Shop Now </a>
+											<a href="" class="btn1"> Mua ngay </a>
 										</div>
 									</div>
 								</div>
@@ -54,11 +53,11 @@
 								<div class="col-md-7 col-lg-6 ">
 									<div class="detail-box">
 										<h1>
-											<span> Sale Up to 30% </span> <br> Jacket
+											<span> Giảm giảm giá 50% </span> <br> Lót chuột
 										</h1>
-										<p>Clothing Sale 30% OFF. 1Days ONLY March 28th!</p>
+										<p>Mua ngay vào ngày 1/4</p>
 										<div class="btn-box">
-											<a href="" class="btn1"> Shop Now </a>
+											<a href="" class="btn1"> Mua ngay </a>
 										</div>
 									</div>
 								</div>
@@ -396,7 +395,9 @@
 								</div>
 								<div class="detail-box">
 									<h5>${ item.name }</h5>
-									<h6>${ item.price }$</h6>
+								</div>
+                                <div class="detail-box" style="justify-content: center;">
+                                    <h6>${ item.price }đ</h6>
 								</div>
 							</div>
 						</div>

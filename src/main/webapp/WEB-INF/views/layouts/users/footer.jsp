@@ -7,12 +7,12 @@
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="#"><img width="210" src="<c:url value="/assets/user/images/logo.png"/>" alt="#" /></a>
+                        <a href="#">Tran Anh Tu</a>
                       </div>
                       <div class="information_f">
-                        <p><strong>ADDRESS:</strong> Do Xuan Hop Street, Thu Duc City</p>
-                        <p><strong>TELEPHONE:</strong> +84 377 659 445</p>
-                        <p><strong>EMAIL:</strong> itnhtu@gmail.com</p>
+                        <p><strong>ADDRESS:</strong> Nhổn, Hà Nội</p>
+                        <p><strong>TELEPHONE:</strong> +84 123 456 798</p>
+                        <p><strong>EMAIL:</strong> a@gmail.com</p>
                       </div>
                    </div>
                </div>

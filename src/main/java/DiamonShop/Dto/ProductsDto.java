@@ -7,7 +7,7 @@ public class ProductsDto {
 	private int id_category;
 	private String sizes;
 	private String name;
-	private double price;
+	private long price;
 	private int sale;
 	private String title;
 	private boolean highlight;
@@ -56,11 +56,11 @@ public class ProductsDto {
 		this.name = name;
 	}
 
-	public double getPrice() {
+	public long getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(long price) {
 		this.price = price;
 	}
 

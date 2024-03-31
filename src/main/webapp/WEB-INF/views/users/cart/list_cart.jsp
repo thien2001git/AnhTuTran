@@ -69,7 +69,7 @@
 				</table>
 				<br />
 				<button class="btn btn-secondary">
-					<a style="color: #FFF" href="products.html"><span
+					<a style="color: #FFF" href="<c:url value="/san-pham/1"/>"><span
 						></span> Continue Shopping </a>
 				</button>
 				<button style="float: right;" class="btn btn-primary">

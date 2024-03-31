@@ -20,28 +20,28 @@
 						
 						<form:form action="dang-ky" method="POST" modelAttribute="users">
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">Email</label>
+								<label class="control-label" >Email</label>
 								<div class="controls">
 									<form:input type="email" class="span3"
 										placeholder="Enter Email" path="user" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">Password</label>
+								<label class="control-label" >Password</label>
 								<div class="controls">
 									<form:input type="password" class="span3"
 										placeholder="Enter password" path="password" />
 								</div>
 							</div>
 							<br><div class="control-group">
-								<label class="control-label" for="inputEmail">Name</label>
+								<label class="control-label">Name</label>
 								<div class="controls">
 									<form:input type="text" class="span3"
 										placeholder="Enter fullname" path="display_name" />
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputEmail">Address</label>
+								<label class="control-label" >Address</label>
 								<div class="controls">
 									<form:input type="text" class="span3"
 										placeholder="Enter Address" path="address" />
