@@ -1,14 +1,33 @@
 package DiamonShop.Entity;
 
+import DiamonShop.Dto.ProductsDto;
+
 public class BillDetail {
 	private long id;
 	private long id_product;
-	private long id_bills;
+	private ProductsDto productsDto;
+
+    public ProductsDto getProductsDto() {
+        return productsDto;
+    }
+
+    public void setProductsDto(ProductsDto productsDto) {
+        this.productsDto = productsDto;
+    }
+
+    private long id_bills;
 	private int quanty;
 	private double total;
-	
-	
-	public BillDetail() {
+
+    public BillDetail(long id, long id_product, long id_bills, int quanty, double total) {
+        this.id = id;
+        this.id_product = id_product;
+        this.id_bills = id_bills;
+        this.quanty = quanty;
+        this.total = total;
+    }
+
+    public BillDetail() {
 		super();
 	}
 	public long getId() {

@@ -26,9 +26,9 @@
 								<div class="option_container">
 									<div class="options">
 										<a
-											href="<c:url value="/chi-tiet-san-pham/${ item.id_product }"/>"
+											href="<c:url value="/users/chi-tiet-san-pham/${ item.id_product }"/>"
 											class="option1"> View Details </a> <a
-											href="<c:url value="/AddCart/${ item.id_product }"/>"
+											href="<c:url value="/users/AddCart/${ item.id_product }"/>"
 											class="option2"> Add to Cart </a>
 									</div>
 								</div>
@@ -73,11 +73,11 @@
 					varStatus="loop">
 					<c:choose>
 						<c:when test="${loop.index == paginateInfo.currentPage}">
-							<a href="<c:url value='/san-pham/${idCategory}/${loop.index}'/>"
+							<a href="<c:url value='/users/san-pham/${idCategory}/${loop.index}'/>"
 								class="active">${loop.index}</a>
 						</c:when>
 						<c:otherwise>
-							<a href="<c:url value='/san-pham/${idCategory}/${loop.index}'/>">${loop.index}</a>
+							<a href="<c:url value='/users/san-pham/${idCategory}/${loop.index}'/>">${loop.index}</a>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>

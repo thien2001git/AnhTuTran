@@ -55,7 +55,7 @@
 									</button>
 									<button class="btn btn-danger" type="button">
 										<a style="color: #FFF;"
-											href="<c:url value="/DeleteCart/${ item.key }"/>"> <span
+											href="<c:url value="/users/DeleteCart/${ item.key }"/>"> <span
 											class="icon-remove"></span> Delete
 										</a> <span class="icon-edit"></span>
 									</button>
@@ -69,11 +69,11 @@
 				</table>
 				<br />
 				<button class="btn btn-secondary">
-					<a style="color: #FFF" href="<c:url value="/san-pham/1"/>"><span
+					<a style="color: #FFF" href="<c:url value="/users/san-pham/1"/>"><span
 						></span> Continue Shopping </a>
 				</button>
 				<button style="float: right;" class="btn btn-primary">
-					<a style="color: #FFF" href="<c:url value="/checkout"/>"
+					<a style="color: #FFF" href="<c:url value="/users/checkout"/>"
 						class="shopBtn btn-large pull-right">Buy Now<span
 						class="icon-arrow-right"></span>
 					</a>

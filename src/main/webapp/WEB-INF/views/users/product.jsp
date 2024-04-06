@@ -26,7 +26,7 @@
 									<div class="options">
 										<a href="chi-tiet-san-pham/${ item.id_product }"
 											class="option1"> View Details </a> <a
-											href="<c:url value="/AddCart/${ item.id_product }"/>"
+											href="<c:url value="/users/AddCart/${ item.id_product }"/>"
 											class="option2"> Add to Cart </a>
 									</div>
 								</div>

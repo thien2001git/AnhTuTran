@@ -385,12 +385,12 @@
 									<div class="options">
 										<a href="chi-tiet-san-pham/${ item.id_product }"
 											class="option1"> View Details </a> <a
-											href="<c:url value="/AddCart/${ item.id_product }"/>"
+											href="<c:url value="/users/AddCart/${ item.id_product }"/>"
 											class="option2"> Add to Cart </a>
 									</div>
 								</div>
 								<div class="img-box">
-									<img src="<c:url value="/assets/user/images/${ item.img }"/>"
+									<img src="<c:url value="/users/assets/user/images/${ item.img }"/>"
 										alt="">
 								</div>
 								<div class="detail-box">

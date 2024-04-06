@@ -13,7 +13,7 @@
 <header class="header_section">
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="<c:url value="/trang-chu"/>">
+            <a class="navbar-brand" href="<c:url value="/users/trang-chu"/>">
                 <%--                      <img width="250" src="<c:url value="/assets/user/images/logo.png"/>" alt="#" />--%>
                 <span class="logo">Tran Anh Tu</span>
 
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<c:url value="/trang-chu"/>">Home <span
+                        <a class="nav-link" href="<c:url value="/users/trang-chu"/>">Home <span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -38,13 +38,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/san-pham/1"/>">Products</a>
+                        <a class="nav-link" href="<c:url value="/users/san-pham/1"/>">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/blog"/>">Blog</a>
+                        <a class="nav-link" href="<c:url value="/users/blog"/>">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/contact"/>">Contact</a>
+                        <a class="nav-link" href="<c:url value="/users/contact"/>">Contact</a>
                     </li>
 
                     <li class="nav-item">
@@ -55,21 +55,21 @@
                                         ${ LoginInfo.display_name }
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="nav-link" href="<c:url value="/dang-xuat"/>"><span
+                                    <a class="nav-link" href="<c:url value="/users/dang-xuat"/>"><span
                                             class="icon-edit"></span>Đăng xuất</a>
-                                    <a class="nav-link" href="<c:url value="/ho-so"/>"><span class="icon-edit"></span>Tài
+                                    <a class="nav-link" href="<c:url value="/users/ho-so"/>"><span class="icon-edit"></span>Tài
                                         khoản</a>
-                                    <a class="nav-link" href="<c:url value="/don-hang"/>"><span class="icon-edit"></span>Đơn hàng</a>
+                                    <a class="nav-link" href="<c:url value="/users/don-hang"/>"><span class="icon-edit"></span>Đơn hàng</a>
                                 </div>
                             </div>
                         </c:if>
                         <c:if test="${ empty LoginInfo }">
-                            <a class="nav-link" href="<c:url value="/dang-ky"/>"><span class="icon-edit"></span>
+                            <a class="nav-link" href="<c:url value="/users/dang-ky"/>"><span class="icon-edit"></span>
                                 Signup</a>
                         </c:if>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/Gio-hang"/>">
+                        <a class="nav-link" href="<c:url value="/users/Gio-hang"/>">
                            <span class="btn btn-mini"><fmt:formatNumber type="number" groupingUsed="true"
                                                                         value="${ TotalQuantyCart }"/>
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"

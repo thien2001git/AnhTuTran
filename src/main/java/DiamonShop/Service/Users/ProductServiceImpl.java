@@ -14,7 +14,6 @@ public class ProductServiceImpl implements IProductService{
 	@Autowired
 	ProductsDao productdao = new ProductsDao();
 	
-	
 	public ProductsDto GetProductsByID(long id) {
 		List<ProductsDto> listProducts = productdao.GetProductsByID(id);
 		return listProducts.get(0);
@@ -22,8 +21,6 @@ public class ProductServiceImpl implements IProductService{
 
 
 	public List<ProductsDto> GetProductByIDCategory(int id) {
-		
 		return productdao.GetAllProductsByID(id);
 	}
-
 }

@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="span9">
 			<ul class="breadcrumb">
-				<li><a href="<c:url value="/trang-chu"/>">Home</a> <span class="divider">/</span></li>
+				<li><a href="<c:url value="/users/trang-chu"/>">Home</a> <span class="divider">/</span></li>
 				<li class="active">Customer</li>
 			</ul>
 			<div class="row">

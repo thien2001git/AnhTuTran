@@ -341,9 +341,9 @@ body {
 			<div class="row">
 				<div class="col-md-5 col-sm-12 col-xs-12">
 					<ul class="breadcrumb">
-						<li><a href="<c:url value="/trang-chu"/>">Home</a> <span
+						<li><a href="<c:url value="/users/trang-chu"/>">Home</a> <span
 							class="divider">/</span></li>
-						<li><a href="products.html">Product</a> <span class="divider">/</span></li>
+						<li><a href="<c:url value="/users/san-pham/1"/>">Product</a> <span class="divider">/</span></li>
 						<li class="active">Product Details</li>
 					</ul>
 					<div class="product-image">
@@ -354,7 +354,7 @@ body {
 							<div class="carousel-inner">
 								<div class="item active">
 									<img
-										src="<c:url value="/assets/user/images/${ product.img }"/>"
+										src="<c:url value="/users/assets/user/images/${ product.img }"/>"
 										class="img-responsive" alt="" />
 								</div>
 							</div>
@@ -400,7 +400,7 @@ body {
 					<hr />
 					<div class="row">
 						<div class="col-sm-12 col-md-6 col-lg-6">
-							<a href="<c:url value="/AddCart/${ product.id_product }"/>;"
+							<a href="<c:url value="/users/AddCart/${ product.id_product }"/>;"
 								class="btn btn-success btn-lg">Add to cart</a>
 						</div>
 
@@ -439,7 +439,7 @@ body {
 						<div class="option_container">
 							<div class="options">
 								<a href="${ item.id_product }" class="option1"> View Details
-								</a> <a href="<c:url value="/AddCart/${ item.id_product }"/>"
+								</a> <a href="<c:url value="/users/AddCart/${ item.id_product }"/>"
 									class="option2"> Add to Cart </a>
 							</div>
 						</div>

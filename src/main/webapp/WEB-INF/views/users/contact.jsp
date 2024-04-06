@@ -89,9 +89,9 @@
 				<div class="col-lg-7 mx-auto px-0">
 					<p>
 						&copy; <span id="displayYear"></span> All Rights Reserved By <a
-							href="<c:url value="/trang-chu"/>">HT Team</a><br>
+							href="<c:url value="/users/trang-chu"/>">HT Team</a><br>
 
-						Distributed By <a href="<c:url value="/trang-chu"/>" target="_blank">HT Team</a>
+						Distributed By <a href="<c:url value="/users/trang-chu"/>" target="_blank">HT Team</a>
 					</p>
 				</div>
 			</div>

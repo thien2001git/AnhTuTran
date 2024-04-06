@@ -60,7 +60,7 @@ public class ProductsDao extends BaseDao {
     }
 
     private StringBuffer SqlProductsByID(int id) {
-        StringBuffer  sql = SqlString();
+        StringBuffer sql = SqlString();
         sql.append("WHERE 1 = 1 ");
         sql.append("AND id_category =  " + id + " ");
         return sql;

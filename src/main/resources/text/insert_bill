@@ -1,0 +1,1 @@
+INSERT INTO `bills`(`user`,`phone`,`display_name`,`address`,`total`,`quanty`,`note`,`uid`,`time_create` ) VALUES(?,?,?,?,?,?,?,?,?);

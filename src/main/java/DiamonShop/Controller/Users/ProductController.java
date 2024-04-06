@@ -1,5 +1,6 @@
 package DiamonShop.Controller.Users;
 
+import DiamonShop.Controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ public class ProductController extends BaseController {
 	@Autowired
 	private IProductService _productService;
 
-	@RequestMapping(value = { "chi-tiet-san-pham/{id}" })
+	@RequestMapping(value = { "users/chi-tiet-san-pham/{id}" })
 	public ModelAndView Index(@PathVariable long id) {
 		_mvShare.setViewName("users/products/product");
 		_mvShare.addObject("product", _productService.GetProductsByID(id));

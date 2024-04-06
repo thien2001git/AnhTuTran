@@ -1,6 +1,7 @@
 package DiamonShop.Controller.Users;
 
 
+import DiamonShop.Controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +12,7 @@ import DiamonShop.Dto.PaginatesDto;
 import DiamonShop.Service.Users.CategoryServiceImpl;
 import DiamonShop.Service.Users.PaginateServiceImpl;
 @Controller
-public class CategoryController extends BaseController{
+public class CategoryController extends BaseController {
 	@Autowired
 	private CategoryServiceImpl categoryService;
 	@Autowired
@@ -19,7 +20,7 @@ public class CategoryController extends BaseController{
 	
 	private int totalProductsPage = 9;
 	
-	@RequestMapping(value = "/san-pham/{id}")
+	@RequestMapping(value = "users/san-pham/{id}")
 	public ModelAndView Product(@PathVariable String id) {
 		_mvShare.setViewName("users/products/category");
 		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();

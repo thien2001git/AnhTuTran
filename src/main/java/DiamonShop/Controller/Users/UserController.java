@@ -4,8 +4,14 @@ package DiamonShop.Controller.Users;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import DiamonShop.Controller.BaseController;
+import DiamonShop.Entity.BillDetail;
+import DiamonShop.Entity.BillWithDetail;
 import DiamonShop.Entity.Bills;
+import DiamonShop.Service.Users.BillDetailServiceImpl;
 import DiamonShop.Service.Users.BillsServiceImpl;
+import DiamonShop.Service.Users.ProductServiceImpl;
+import DiamonShop.Utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import DiamonShop.Entity.Users;
 import DiamonShop.Service.Users.AccountServiceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,14 +34,19 @@ public class UserController extends BaseController {
     @Autowired
     BillsServiceImpl billsServiceImpl = new BillsServiceImpl();
 
-    @RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
+    @Autowired
+    BillDetailServiceImpl billDetailService = new BillDetailServiceImpl();
+    @Autowired
+    ProductServiceImpl productService;
+
+    @RequestMapping(value = "users/dang-ky", method = RequestMethod.GET)
     public ModelAndView Register() {
         _mvShare.setViewName("users/account/register");
         _mvShare.addObject("users", new Users());
         return _mvShare;
     }
 
-    @RequestMapping(value = "/dang-ky", method = RequestMethod.POST)
+    @RequestMapping(value = "users/dang-ky", method = RequestMethod.POST)
     public ModelAndView CreateAcc(@ModelAttribute("user") Users users) {
         int count = accountService.AddAccount(users);
         if (count > 0) {
@@ -46,7 +58,7 @@ public class UserController extends BaseController {
         return _mvShare;
     }
 
-    @RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
+    @RequestMapping(value = "users/dang-nhap", method = RequestMethod.POST)
     public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users users) {
         users = accountService.CheckAccount(users);
         if (users != null) {
@@ -58,23 +70,27 @@ public class UserController extends BaseController {
         return _mvShare;
     }
 
-    @RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
+    @RequestMapping(value = "users/dang-xuat", method = RequestMethod.GET)
     public String Login(HttpSession session, HttpServletRequest request) {
         session.removeAttribute("LoginInfo");
         return "redirect:" + request.getHeader("Referer");
     }
 
-    @RequestMapping(value = "/ho-so", method = RequestMethod.GET)
+    @RequestMapping(value = "users/ho-so", method = RequestMethod.GET)
     public ModelAndView HoSo(HttpSession session, HttpServletRequest request) {
-        Users users = (Users) session.getAttribute("LoginInfo");
-        users.setPassword("******");
+        try {
+            Users users = (Users) session.getAttribute("LoginInfo");
+            users.setPassword("******");
 
-        _mvShare.setViewName("users/account/edit");
-        _mvShare.addObject("info", users);
+            _mvShare.setViewName("users/account/edit");
+            _mvShare.addObject("info", users);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         return _mvShare;
     }
 
-    @RequestMapping(value = "/cap-nhat-tai-khoan", method = RequestMethod.POST)
+    @RequestMapping(value = "users/cap-nhat-tai-khoan", method = RequestMethod.POST)
     public ModelAndView update(HttpSession session, @ModelAttribute("user") Users users) {
         Users users1 = (Users) session.getAttribute("LoginInfo");
         int res = accountService.DeleteAccount(users1);
@@ -89,15 +105,27 @@ public class UserController extends BaseController {
         return _mvShare;
     }
 
-    @RequestMapping(value = "/don-hang", method = RequestMethod.GET)
+    @RequestMapping(value = "users/don-hang", method = RequestMethod.GET)
     public ModelAndView DonHang(HttpSession session, HttpServletRequest request) {
-        Users users1 = (Users) session.getAttribute("LoginInfo");
-        List<Bills> listBill = billsServiceImpl.GetBills(users1);
-        for (Bills b: listBill) {
-            System.out.println(b.getUser());
-        }
         _mvShare.setViewName("users/bills/history");
-        _mvShare.addObject("listBill", listBill);
+        try {
+            ArrayList<BillWithDetail> billWithDetails = new ArrayList<>();
+            Users users1 = (Users) session.getAttribute("LoginInfo");
+            List<Bills> listBill = billsServiceImpl.GetBills(users1);
+            for (Bills bills : listBill) {
+                BillWithDetail billWithDetail = new BillWithDetail(bills, billDetailService.GetAllBillDetals(bills));
+                for (BillDetail billDetail : billWithDetail.getBillDetails()) {
+                    billDetail.setProductsDto(productService.GetProductsByID(billDetail.getId_product()));
+                }
+                billWithDetails.add(billWithDetail);
+
+                System.out.println("ssssize " + billWithDetails.get(0).getBillDetails().size());
+            }
+            _mvShare.addObject("listBill", billWithDetails);
+        } catch (NullPointerException ex) {
+            _mvShare.addObject("mess", "!Không có đơn hàng nào!");
+            Log.i("Không có đơn hàng nào");
+        }
         return _mvShare;
     }
 }
