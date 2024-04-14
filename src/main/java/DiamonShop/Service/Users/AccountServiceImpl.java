@@ -30,6 +30,21 @@ public class AccountServiceImpl implements IAccountService {
         return null;
     }
 
+    public Users CheckAdminAccount(Users users) {
+        String pass = users.getPassword();
+        System.out.println("AccountServiceImpl " + pass);
+        Users users1 = usersDao.GetAdminByAcc(users);
+        System.out.println("AccountServiceImpl " + users1);
+        if (users1 != null) {
+            if (BCrypt.checkpw(pass, users1.getPassword())) {
+                return users;
+            } else {
+                return null;
+            }
+        }
+        return null;
+    }
+
     public int DeleteAccount(Users users) {
         int x = usersDao.DeleteUserByAcc(users);
         System.out.printf("AccountServiceImpl.DeleteAccount email %s res %d", users.getUser(), x);
