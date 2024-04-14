@@ -37,6 +37,12 @@
                                     <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"/>"></use>
                                 </svg>
                                 Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+                            <li class="nav-title">Statistical</li>
+                            <li class="nav-item"><a class="nav-link" href="index.html">
+                                <svg class="nav-icon">
+                                    <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"/>"></use>
+                                </svg>
+                                Statistical<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
                             <li class="nav-group">
                                 <a class="nav-link nav-group-toggle" href="#">
                                     <svg class="nav-icon">
@@ -59,6 +65,24 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="nav-title">Bills</li>
+                            <li class="nav-group">
+                                <a class="nav-link nav-group-toggle" href="#">
+                                    <svg class="nav-icon">
+                                        <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"/>"></use>
+                                    </svg>
+                                    Bills
+                                </a>
+                                <ul class="nav-group-items compact">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/bills/view">
+                                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>
+                                            View Bills
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                         </div>
                     </div>
                 </div>
