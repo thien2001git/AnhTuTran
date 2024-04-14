@@ -390,7 +390,7 @@
 									</div>
 								</div>
 								<div class="img-box">
-									<img src="<c:url value="/users/assets/user/images/${ item.img }"/>"
+									<img src="<c:url value="/assets/user/images/${ item.img }"/>"
 										alt="">
 								</div>
 								<div class="detail-box">
