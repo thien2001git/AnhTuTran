@@ -60,12 +60,17 @@ public class UserController extends BaseController {
 
     @RequestMapping(value = "users/dang-nhap", method = RequestMethod.POST)
     public ModelAndView Login(HttpSession session, @ModelAttribute("user") Users users) {
-        users = accountService.CheckAccount(users);
-        if (users != null) {
-            _mvShare.setViewName("redirect:trang-chu");
-            session.setAttribute("LoginInfo", users);
-        } else {
+        try {
+            users = accountService.CheckAccount(users);
+            if (users != null) {
+                _mvShare.setViewName("redirect:trang-chu");
+                session.setAttribute("LoginInfo", users);
+            } else {
+                _mvShare.addObject("statusLogin", "Đăng nhập thất bại");
+            }
+        } catch (Exception ex) {
             _mvShare.addObject("statusLogin", "Đăng nhập thất bại");
+            ex.printStackTrace();
         }
         return _mvShare;
     }
