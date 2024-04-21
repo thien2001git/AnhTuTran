@@ -31,7 +31,7 @@ public class CategoryController extends BaseController {
 		return _mvShare;
 	}
 	
-	@RequestMapping(value = "/san-pham/{id}/{currentPage}")
+	@RequestMapping(value = "users/san-pham/{id}/{currentPage}")
 	public ModelAndView Product(@PathVariable String id, @PathVariable String currentPage) {
 		_mvShare.setViewName("users/products/category");
 		int totalData = categoryService.GetAllProductsByID(Integer.parseInt(id)).size();

@@ -2,6 +2,7 @@ package DiamonShop.Controller.Users;
 
 import DiamonShop.Controller.BaseController;
 import DiamonShop.Dto.ProductsDto;
+import DiamonShop.Entity.Categorys;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,10 +21,12 @@ public class HomeController extends BaseController {
     }
 
     @RequestMapping(value = {"users", "users/trang-chu"})
-    public ModelAndView Index() {
+    public ModelAndView Index(HttpSession session) {
         //ModelAndView mv = new ModelAndView("users/index");
         List<ProductsDto> v = _homeService.GetDataProducts();
+        List<Categorys> categorys = _homeService.GetDataCategorys();
         _mvShare.addObject("categorys", _homeService.GetDataCategorys());
+        session.setAttribute("categorys", categorys);
         _mvShare.addObject("products", v);
         _mvShare.setViewName("users/index");
         return _mvShare;
