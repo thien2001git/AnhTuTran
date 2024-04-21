@@ -24,7 +24,6 @@
 						<tr>
 							<th scope="col">Image</th>
 							<th scope="col">Name</th>
-							<th scope="col">Color</th>
 							<th scope="col">Price</th>
 							<th scope="col">Amount</th>
 							<th scope="col">Action</th>
