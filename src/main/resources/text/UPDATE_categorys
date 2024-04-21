@@ -1,0 +1,7 @@
+UPDATE
+    `categorys`
+SET
+    `name` = ?,
+    `description` = ?
+WHERE
+    `id` = ?

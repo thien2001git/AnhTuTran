@@ -188,11 +188,11 @@
                         </svg>
                         Settings</a>
                         <a class="dropdown-item" href="#">
-                        <svg class="icon me-2">
-                            <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-credit-card"/>"></use>
-                        </svg>
-                        Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item"
-                                                                                               href="#">
+                            <svg class="icon me-2">
+                                <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-credit-card"/>"></use>
+                            </svg>
+                            Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item"
+                                                                                                   href="#">
                         <svg class="icon me-2">
                             <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-file"/>"></use>
                         </svg>
@@ -213,12 +213,15 @@
         </div>
         <div class="container-fluid px-4">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb my-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active"><span>Dashboard</span>
-                    </li>
-                </ol>
+                <%--                <ol class="breadcrumb my-0">--%>
+                <%--                    <li class="breadcrumb-item"><a href="#">Home</a>--%>
+                <%--                    </li>--%>
+                <%--                    <li class="breadcrumb-item active"><span>Dashboard</span>--%>
+                <%--                    </li>--%>
+                <%--                </ol>--%>
+                <c:if test="${ not empty Breadcrumb }">
+                    ${Breadcrumb}
+                </c:if>
             </nav>
         </div>
     </header>

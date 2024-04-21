@@ -17,4 +17,7 @@ public class Constant {
 
     public static String SELLECT_BILL_DETAIL = ROOT + "text\\select_bill_details";
     public static String INSERT_BILL = ROOT + "text\\insert_bill";
+    public static String UPDATE_CATEGORYS = ROOT + "text\\UPDATE_categorys";
+    public static String DELETE_CATEGORYS = ROOT + "text\\DELETE_categorys";
+    public static String INSERT_CATEGORYS = ROOT + "text\\INSERT_categorys";
 }

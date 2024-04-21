@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: Mar 31, 2024 at 11:26 AM
+-- Generation Time: Apr 21, 2024 at 02:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,7 +43,8 @@ INSERT INTO `billdetail` (`id`, `id_product`, `id_bills`, `quanty`, `total`) VAL
 (22, 5, 34, 2, 48980000),
 (23, 8, 34, 1, 14000000),
 (24, 5, 35, 1, 24490000),
-(25, 9, 35, 1, 12490000);
+(25, 9, 35, 1, 12490000),
+(26, 11, 36, 2, 17580000);
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,8 @@ CREATE TABLE `bills` (
 
 INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, `quanty`, `note`, `uid`, `time_create`) VALUES
 (34, 'admin@gmail.com', '1234', 'Monkey D. luffy', 'East Blue', 62980000, 3, '', 22, 1711873325),
-(35, 'admin@gmail.com', '', 'Monkey D. luffy', 'East Blue', 36980000, 2, '', 22, 1711876677);
+(35, 'admin@gmail.com', '', 'Monkey D. luffy', 'East Blue', 36980000, 2, '', 22, 1711876677),
+(36, 'admin@gmail.com', '123456789', 'Monkey D. luffy', 'East Blue', 17580000, 2, '', 22, 1713015778);
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ CREATE TABLE `categorys` (
 --
 
 INSERT INTO `categorys` (`id`, `name`, `description`) VALUES
-(1, 'ASUS', NULL),
+(1, 'ASUS', '788'),
 (2, 'LENOVO', NULL),
 (3, 'MSI', NULL),
 (4, 'HP', NULL);
@@ -186,19 +188,20 @@ CREATE TABLE `users` (
   `user` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `display_name` varchar(255) NOT NULL,
-  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
+  `address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `role` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`) VALUES
-(15, 'test@gmail.com', '$2a$12$euhjuHzrIx9.2mFtM4QZMupe6zCgTn2TzET06dHD5sUXltMDXMTiW', 'test', '123'),
-(16, 'hoaitu@gmail.com', '$2a$12$JHqf9p/W835aLShraO9jZ.m1CWHEg0fWPkEMn/t23.HFjGiNT2jAy', 'Nguyá»n HoÃ i TÃº', 'Do Xuan Hop, Thu Duc City'),
-(17, 'hello@gmail.com', '$2a$12$rRWBNfonTLtsDeFtu6O35.96Efm90dO5BGo6u7kQyHszKktWalQ6y', 'hello', 'Do Xuan Hop, Thu Duc City'),
-(18, 'hello1@gmail.com', '$2a$12$JRokoQWhZkSQwmHBhfxDkexZa5ymsKD9GciCqLKUYQ7H0uFTtP.bC', 'hello 1', 'thu duc'),
-(22, 'admin@gmail.com', '$2a$12$w3ixmKRVaRA/ExaFxOM/relqdYgiqGlkzOu0gECL/awIPop9NEd1i', 'Monkey D. luffy', 'East Blue');
+INSERT INTO `users` (`id`, `user`, `password`, `display_name`, `address`, `role`) VALUES
+(15, 'test@gmail.com', '$2a$12$euhjuHzrIx9.2mFtM4QZMupe6zCgTn2TzET06dHD5sUXltMDXMTiW', 'test', '123', 1),
+(16, 'hoaitu@gmail.com', '$2a$12$JHqf9p/W835aLShraO9jZ.m1CWHEg0fWPkEMn/t23.HFjGiNT2jAy', 'Nguyá»n HoÃ i TÃº', 'Do Xuan Hop, Thu Duc City', 1),
+(17, 'hello@gmail.com', '$2a$12$rRWBNfonTLtsDeFtu6O35.96Efm90dO5BGo6u7kQyHszKktWalQ6y', 'hello', 'Do Xuan Hop, Thu Duc City', 1),
+(18, 'hello1@gmail.com', '$2a$12$JRokoQWhZkSQwmHBhfxDkexZa5ymsKD9GciCqLKUYQ7H0uFTtP.bC', 'hello 1', 'thu duc', 1),
+(22, 'admin@gmail.com', '$2a$12$w3ixmKRVaRA/ExaFxOM/relqdYgiqGlkzOu0gECL/awIPop9NEd1i', 'Monkey D. luffy', 'East Blue', 2);
 
 --
 -- Indexes for dumped tables
@@ -252,13 +255,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `billdetail`
 --
 ALTER TABLE `billdetail`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `categorys`

@@ -43,6 +43,30 @@
                                     <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-speedometer"/>"></use>
                                 </svg>
                                 Statistical<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+
+                            <li class="nav-title">Products</li>
+                            <li class="nav-group">
+                                <a class="nav-link nav-group-toggle" href="#">
+                                    <svg class="nav-icon">
+                                        <use xlink:href="<c:url value="/assets/admin/node_modules/@coreui/icons/sprites/free.svg#cil-puzzle"/>"></use>
+                                    </svg>
+                                    Category
+                                </a>
+                                <ul class="nav-group-items compact">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/category/add">
+                                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>
+                                            Add Category
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/admin/category/view">
+                                            <span class="nav-icon"><span class="nav-icon-bullet"></span></span>
+                                            View Category
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="nav-group">
                                 <a class="nav-link nav-group-toggle" href="#">
                                     <svg class="nav-icon">
