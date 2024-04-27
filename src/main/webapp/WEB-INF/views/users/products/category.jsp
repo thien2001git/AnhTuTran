@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2">
+        <div class="col-2" id="categorySide" style="background-color: #ddd">
             <c:if test="${ not empty categorys }">
                 <div class="row" style="background-color: #ddd">
                     <div class="col-12 center" >
@@ -26,7 +26,7 @@
                 </div>
             </c:if>
         </div>
-        <div class="col-10" style="background-color: #eee">
+        <div class="col-10" style="background-color: #eee" id="mainProduct">
             <section id="product" class="product_section layout_padding">
                 <div class="container">
                     <div class="heading_container heading_center">
@@ -73,9 +73,8 @@
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="/DiamonShop_war/users/san-pham/${idCategory}/1">1</a></li>
-                            <li class="page-item"><a class="page-link" href="/DiamonShop_war/users/san-pham/${idCategory}/2">2</a></li>
-                            <li class="page-item"><a class="page-link" href="/DiamonShop_war/users/san-pham/${idCategory}/3">3</a></li>
+                            <div style="display: none" id="idCategory">${idCategory}</div>
+                            ${paging}
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
@@ -91,3 +90,5 @@
     </div>
 </div>
 
+<script>
+</script>
